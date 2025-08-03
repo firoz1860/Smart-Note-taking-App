@@ -163,6 +163,6 @@ The Smart Note App provides an excellent foundation for RAG implementation, with
 ## Resources
 
 - [LangChain RAG Documentation](https://python.langchain.com/docs/use_cases/question_answering/)
-- [OpenAI Embeddings Guide](https://platform.openai.com/docs/guides/embeddings)
+- [Gemnai Embeddings Guide](https://platform.openai.com/docs/guides/embeddings)
 - [Vector Database Comparison](https://www.pinecone.io/learn/vector-database/)
 - [RAG Best Practices](https://docs.anthropic.com/claude/docs/rag-best-practices)

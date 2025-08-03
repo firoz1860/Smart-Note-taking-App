@@ -13,6 +13,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
+
+     <head>
+        {/* Favicon link */}
+         <link rel="icon" type="image/png" href="/smart-app.png" />
+      </head>
+
       <body className={inter.className}>
         <ThemeProvider>
           <LenisProvider>
