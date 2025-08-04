@@ -15,9 +15,9 @@ export function Editor({ note, onNoteChange, title, onTitleChange }) {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       <div>
-        <Label htmlFor="title" className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 block">
+        <Label htmlFor="title" className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2 sm:mb-3 block">
           Note Title (Optional)
         </Label>
         <Input
@@ -25,7 +25,7 @@ export function Editor({ note, onNoteChange, title, onTitleChange }) {
           value={title}
           onChange={(e) => onTitleChange(e.target.value)}
           placeholder="Enter a title for your note..."
-          className="w-full text-lg font-medium"
+          className="w-full text-base sm:text-lg font-medium"
         />
       </div>
       
@@ -43,15 +43,15 @@ export function Editor({ note, onNoteChange, title, onTitleChange }) {
           value={note}
           onChange={handleNoteChange}
           placeholder="Start writing your note here... Let your thoughts flow, and we'll help you refine them with AI."
-          className="min-h-80 resize-none text-base leading-relaxed"
-          rows={16}
+          className="min-h-60 sm:min-h-80 resize-none text-sm sm:text-base leading-relaxed"
+          rows={12}
         />
       </div>
       
       {note && (
-        <div className="text-sm text-gray-600 dark:text-gray-400 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 p-4 rounded-xl border border-blue-100 dark:border-blue-900">
+        <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 p-3 sm:p-4 rounded-lg sm:rounded-xl border border-blue-100 dark:border-blue-900">
           <p className="font-semibold mb-2 text-blue-800 dark:text-blue-200">💡 Writing Tips:</p>
-          <ul className="space-y-1 text-xs">
+          <ul className="space-y-1 text-xs sm:text-sm">
             <li>• Don't worry about perfect grammar - focus on getting your ideas down</li>
             <li>• Use AI refinement to polish your writing and improve clarity</li>
             <li>• Generate smart titles to help organize and find your notes later</li>
@@ -61,5 +61,9 @@ export function Editor({ note, onNoteChange, title, onTitleChange }) {
     </div>
   );
 }
+
+
+
+
 
 

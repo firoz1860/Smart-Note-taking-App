@@ -49,24 +49,20 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="flex flex-wrap justify-between items-center h-auto py-4 sm:py-2 relative z-10">
-            <div className="flex items-center space-x-3 flex-shrink-0">
-              <PenTool className="h-8 w-8 text-blue-600" />
-              <div className="hidden sm:block">
-                <h1 className="text-xl font-bold text-gray-900 dark:text-white">
-                  Smart Note
-                </h1>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  AI-Powered Writing Assistant
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-2 sm:space-y-0 w-full sm:w-auto mt-4 sm:mt-0">
-              <div className="flex items-center justify-between w-full sm:w-auto space-x-2 text-sm text-gray-600 dark:text-gray-300 md:flex">
-                <User className="h-4 w-4" />
-                <span className="truncate max-w-full sm:max-w-[180px] md:max-w-[250px]">{user.email}</span>
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+          {/* Mobile Layout */}
+          <div className="flex flex-col space-y-3 py-3 sm:hidden">
+            <div className="flex justify-between items-center">
+              <div className="flex items-center space-x-2">
+                <PenTool className="h-6 w-6 text-blue-600" />
+                <div>
+                  <h1 className="text-lg font-bold text-gray-900 dark:text-white">
+                    Smart Note
+                  </h1>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                    AI-Powered Writing Assistant
+                  </p>
+                </div>
               </div>
               <div className="flex items-center space-x-2">
                 <ThemeToggle />
@@ -74,21 +70,55 @@ export default function Dashboard() {
                   variant="ghost"
                   size="sm"
                   onClick={handleLogout}
-                  className="flex items-center space-x-1 sm:space-x-2 hover:bg-red-50 dark:hover:bg-red-900/20 text-red-600 dark:text-red-400"
+                  className="flex items-center space-x-1 hover:bg-red-50 dark:hover:bg-red-900/20 text-red-600 dark:text-red-400"
                 >
                   <LogOut className="h-4 w-4" />
-                  <span className="hidden sm:inline">Logout</span>
                 </Button>
               </div>
+            </div>
+            <div className="flex items-center justify-center space-x-2 text-sm text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 rounded-lg px-3 py-2">
+              <User className="h-4 w-4" />
+              <span className="truncate">{user.email}</span>
+            </div>
+          </div>
+
+          {/* Tablet and Desktop Layout */}
+          <div className="hidden sm:flex justify-between items-center py-4">
+            <div className="flex items-center space-x-3">
+              <PenTool className="h-7 w-7 md:h-8 md:w-8 text-blue-600" />
+              <div>
+                <h1 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">
+                  Smart Note
+                </h1>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  AI-Powered Writing Assistant
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <ThemeToggle />
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleLogout}
+                className="flex items-center space-x-1 md:space-x-2 hover:bg-red-50 dark:hover:bg-red-900/20 text-red-600 dark:text-red-400"
+              >
+                <LogOut className="h-4 w-4" />
+                <span className="hidden md:inline">Logout</span>
+              </Button>
             </div>
           </div>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
+      <main className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6 lg:py-8">
         <NoteEditor user={user} />
       </main>
     </div>
   );
 }
+
+
+
+
 
